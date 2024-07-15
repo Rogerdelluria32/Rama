@@ -10,33 +10,35 @@
             font-family: 'Nunito', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: white; /* Fondo blanco */
+            color: black; /* Texto en negro */
         }
         header {
-            background-color: #333;
-            color: white;
+            background-color: white; /* Fondo blanco */
+            color: black; /* Texto en negro */
             text-align: center;
             padding: 1em 0;
         }
         header h1 {
-    font-size: 2.5em;
-    margin: 0;
-    font-weight: 300; /* Nunito Light */
-    text-transform: uppercase; /* Transformar a mayúsculas */
-}
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: 300; /* Nunito Light */
+            text-transform: uppercase; /* Transformar a mayúsculas */
+        }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #444;
+            background-color: white; /* Fondo blanco */
+            border-bottom: 1px solid #ddd; /* Línea inferior */
         }
         nav a {
-            color: white;
+            color: black; /* Texto en negro */
             text-decoration: none;
             padding: 1em;
             font-weight: 200; /* Nunito Extra Light */
         }
         nav a:hover {
-            background-color: #555;
+            background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
         }
         .gallery {
             display: flex;
@@ -47,16 +49,14 @@
         .gallery img {
             margin: 1em;
             max-width: calc(33% - 2em);
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra más ligera */
         }
         footer {
             text-align: center;
             padding: 1em 0;
-            background-color: #333;
-            color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            background-color: white; /* Fondo blanco */
+            color: black; /* Texto en negro */
+            border-top: 1px solid #ddd; /* Línea superior */
         }
     </style>
 </head>
