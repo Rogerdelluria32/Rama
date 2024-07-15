@@ -3,53 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rama - Artista</title>
+    <title>Rama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;200&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Nunito', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #f5f5f5;
         }
         header {
             background-color: #333;
-            color: #fff;
-            padding: 10px 0;
+            color: white;
             text-align: center;
+            padding: 1em 0;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: 300; /* Nunito Light */
         }
         nav {
-            text-align: center;
-            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            background-color: #444;
         }
         nav a {
-            margin: 0 15px;
+            color: white;
             text-decoration: none;
-            color: #333;
+            padding: 1em;
+            font-weight: 200; /* Nunito Extra Light */
         }
-        .section {
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        nav a:hover {
+            background-color: #555;
         }
         .gallery {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
+            padding: 2em;
         }
         .gallery img {
-            width: 100%;
-            max-width: 300px;
-            margin: 10px;
-            border-radius: 5px;
+            margin: 1em;
+            max-width: calc(33% - 2em);
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         footer {
-            background-color: #333;
-            color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 1em 0;
+            background-color: #333;
+            color: white;
             position: fixed;
             width: 100%;
             bottom: 0;
@@ -58,37 +61,31 @@
 </head>
 <body>
     <header>
-        <h1>Rama - Artista</h1>
+        <h1>Rama</h1>
     </header>
     <nav>
-        <a href="#pintura">Pintura</a>
+        <a href="#pinturas">Pinturas</a>
         <a href="#dibujos">Dibujos</a>
         <a href="#contacto">Contacto</a>
     </nav>
-    <section id="pintura" class="section">
-        <h2>Pintura</h2>
-        <div class="gallery">
-            <!-- Aquí puedes agregar tus imágenes de pinturas -->
-            <img src="ruta-a-tu-imagen1.jpg" alt="Pintura 1">
-            <img src="ruta-a-tu-imagen2.jpg" alt="Pintura 2">
-            <img src="ruta-a-tu-imagen3.jpg" alt="Pintura 3">
-        </div>
+    <section id="pinturas" class="gallery">
+        <!-- Añade aquí tus imágenes de pinturas -->
+        <img src="pintura1.jpg" alt="Pintura 1">
+        <img src="pintura2.jpg" alt="Pintura 2">
+        <img src="pintura3.jpg" alt="Pintura 3">
     </section>
-    <section id="dibujos" class="section">
-        <h2>Dibujos</h2>
-        <div class="gallery">
-            <!-- Aquí puedes agregar tus imágenes de dibujos -->
-            <img src="ruta-a-tu-imagen4.jpg" alt="Dibujo 1">
-            <img src="ruta-a-tu-imagen5.jpg" alt="Dibujo 2">
-            <img src="ruta-a-tu-imagen6.jpg" alt="Dibujo 3">
-        </div>
+    <section id="dibujos" class="gallery">
+        <!-- Añade aquí tus imágenes de dibujos -->
+        <img src="dibujo1.jpg" alt="Dibujo 1">
+        <img src="dibujo2.jpg" alt="Dibujo 2">
+        <img src="dibujo3.jpg" alt="Dibujo 3">
     </section>
-    <section id="contacto" class="section">
+    <section id="contacto">
         <h2>Contacto</h2>
-        <p>Para consultas y ventas, por favor envíame un correo a <a href="mailto:tucorreo@ejemplo.com">tucorreo@ejemplo.com</a>.</p>
+        <p>Para consultas y ventas, por favor envíame un correo a: <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></p>
     </section>
     <footer>
-        <p>&copy; 2024 Rama - Todos los derechos reservados</p>
+        <p>&copy; 2024 Rama. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
