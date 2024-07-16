@@ -58,6 +58,26 @@
             color: black; /* Texto en negro */
             border-top: 1px solid #ddd; /* Línea superior */
         }
+        /* Estilos para el apartado de contacto */
+        #contacto {
+            display: none; /* Ocultar por defecto */
+            padding: 2em;
+            text-align: center;
+        }
+        #contacto.active {
+            display: block; /* Mostrar cuando está activo */
+        }
+        #contacto p {
+            font-size: 1.2em;
+        }
+        #contacto .email {
+            font-size: 1.5em;
+            color: #007bff; /* Color azul típico de enlaces */
+            text-decoration: none;
+        }
+        #contacto .email:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -68,7 +88,7 @@
         <a href="#pinturas">Pinturas</a>
         <a href="#dibujos">Dibujos</a>
         <a href="#bocetos-estudios">Bocetos y Estudios</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#contacto-link" id="contacto-link">Contacto</a>
     </nav>
     <section id="pinturas" class="gallery">
         <!-- Añade aquí tus imágenes de pinturas -->
@@ -88,12 +108,21 @@
         <img src="boceto2.jpg" alt="Boceto 2">
         <img src="boceto3.jpg" alt="Boceto 3">
     </section>
+    <!-- Sección de contacto -->
     <section id="contacto">
-        <h2>Contacto</h2>
-        <!-- Añade aquí tu información de contacto -->
+        <p>Para adquirir o reservar una de mis obras, por favor contáctame por correo electrónico:</p>
+        <a href="mailto:contacto@ramaweb.com" class="email">contacto@ramaweb.com</a>
     </section>
     <footer>
         <p>&copy; 2024 Rama. Todos los derechos reservados.</p>
     </footer>
+    <!-- Script para manejar la visualización de la sección de contacto -->
+    <script>
+        // Función para mostrar/ocultar la sección de contacto
+        document.getElementById('contacto-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('contacto').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
