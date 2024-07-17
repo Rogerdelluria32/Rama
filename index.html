@@ -30,7 +30,8 @@
             justify-content: center;
             background-color: white; /* Fondo blanco */
             border-bottom: 1px solid #ddd; /* Línea inferior */
-            padding: 1em 0; /* Ajustar el padding para acercar las secciones al header */
+            margin-top: -1em; /* Acercar las secciones al header */
+            padding: 0.5em 0; /* Reducir padding para acercar las secciones al header */
         }
         nav a {
             color: black; /* Texto en negro */
@@ -38,6 +39,7 @@
             padding: 1em;
             font-weight: 200; /* Nunito Extra Light */
             font-size: 1em; /* Tamaño de fuente */
+            transition: background-color 0.3s; /* Transición suave para el fondo */
         }
         nav a:hover {
             background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
@@ -57,14 +59,17 @@
             flex-wrap: wrap;
             justify-content: center;
             padding: 2em;
+            opacity: 0; /* Transición suave */
+            transition: opacity 0.5s;
+        }
+        .gallery.active {
+            display: flex; /* Mostrar galería activa */
+            opacity: 1; /* Transición suave */
         }
         .gallery img {
             margin: 1em;
             max-width: calc(33% - 2em);
             box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra más ligera */
-        }
-        .gallery.active {
-            display: flex; /* Mostrar galería activa */
         }
         footer {
             text-align: center;
@@ -78,9 +83,12 @@
             display: none; /* Ocultar por defecto */
             padding: 2em;
             text-align: center;
+            opacity: 0; /* Transición suave */
+            transition: opacity 0.5s;
         }
         #contacto.active {
             display: block; /* Mostrar cuando está activo */
+            opacity: 1; /* Transición suave */
         }
         #contacto p {
             font-size: 1em; /* Tamaño de fuente ajustado */
@@ -140,14 +148,11 @@
     <!-- Script para manejar la visualización de las secciones -->
     <script>
         function showSection(sectionId) {
-            // Ocultar todas las galerías
-            var galleries = document.querySelectorAll('.gallery');
-            galleries.forEach(function(gallery) {
-                gallery.classList.remove('active');
+            // Ocultar todas las galerías y secciones de contacto
+            var sections = document.querySelectorAll('.gallery, #contacto');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
             });
-
-            // Ocultar la sección de contacto
-            document.getElementById('contacto').classList.remove('active');
 
             // Mostrar la galería o sección seleccionada
             document.getElementById(sectionId).classList.add('active');
