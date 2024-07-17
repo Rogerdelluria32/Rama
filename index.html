@@ -17,7 +17,7 @@
             background-color: white; /* Fondo blanco */
             color: black; /* Texto en negro */
             text-align: center;
-            padding: 4em 0; /* Añadido margen superior e inferior */
+            padding: 2em 0; /* Reducido margen superior e inferior */
         }
         header h1 {
             font-size: 2.5em;
@@ -30,6 +30,7 @@
             justify-content: center;
             background-color: white; /* Fondo blanco */
             border-bottom: 1px solid #ddd; /* Línea inferior */
+            padding: 1em 0; /* Ajustar el padding para acercar las secciones al header */
         }
         nav a {
             color: black; /* Texto en negro */
@@ -41,8 +42,18 @@
         nav a:hover {
             background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
         }
-        .gallery {
+        .main-image {
             display: flex;
+            justify-content: center;
+            padding: 2em;
+        }
+        .main-image img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra más ligera */
+        }
+        .gallery {
+            display: none; /* Ocultar galerías por defecto */
             flex-wrap: wrap;
             justify-content: center;
             padding: 2em;
@@ -51,6 +62,9 @@
             margin: 1em;
             max-width: calc(33% - 2em);
             box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra más ligera */
+        }
+        .gallery.active {
+            display: flex; /* Mostrar galería activa */
         }
         footer {
             text-align: center;
@@ -89,11 +103,14 @@
         <h1>Rama</h1>
     </header>
     <nav>
-        <a href="#pinturas">Pinturas</a>
-        <a href="#dibujos">Dibujos</a>
-        <a href="#bocetos-estudios">Bocetos y Estudios</a>
-        <a href="#contacto-link" id="contacto-link">Contacto</a>
+        <a href="#" onclick="showSection('pinturas')">Pinturas</a>
+        <a href="#" onclick="showSection('dibujos')">Dibujos</a>
+        <a href="#" onclick="showSection('bocetos-estudios')">Bocetos y Estudios</a>
+        <a href="#" onclick="showSection('contacto')">Contacto</a>
     </nav>
+    <section class="main-image">
+        <img src="principal.jpg" alt="Imagen principal">
+    </section>
     <section id="pinturas" class="gallery">
         <!-- Añade aquí tus imágenes de pinturas -->
         <img src="pintura1.jpg" alt="Pintura 1">
@@ -120,13 +137,21 @@
     <footer>
         <p>&copy; 2024 Rama. Todos los derechos reservados.</p>
     </footer>
-    <!-- Script para manejar la visualización de la sección de contacto -->
+    <!-- Script para manejar la visualización de las secciones -->
     <script>
-        // Función para mostrar/ocultar la sección de contacto
-        document.getElementById('contacto-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.getElementById('contacto').classList.toggle('active');
-        });
+        function showSection(sectionId) {
+            // Ocultar todas las galerías
+            var galleries = document.querySelectorAll('.gallery');
+            galleries.forEach(function(gallery) {
+                gallery.classList.remove('active');
+            });
+
+            // Ocultar la sección de contacto
+            document.getElementById('contacto').classList.remove('active');
+
+            // Mostrar la galería o sección seleccionada
+            document.getElementById(sectionId).classList.add('active');
+        }
     </script>
 </body>
 </html>
