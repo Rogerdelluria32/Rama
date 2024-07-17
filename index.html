@@ -25,6 +25,10 @@
             font-weight: 300; /* Nunito Light */
             text-transform: uppercase; /* Transformar a mayúsculas */
         }
+        header a {
+            text-decoration: none;
+            color: black;
+        }
         nav {
             display: flex;
             justify-content: center;
@@ -108,7 +112,7 @@
 </head>
 <body>
     <header>
-        <h1>Rama</h1>
+        <h1><a href="#" onclick="showMainImage()">Rama</a></h1>
     </header>
     <nav>
         <a href="#" onclick="showSection('pinturas')">Pinturas</a>
@@ -116,7 +120,7 @@
         <a href="#" onclick="showSection('bocetos-estudios')">Bocetos y Estudios</a>
         <a href="#" onclick="showSection('contacto')">Contacto</a>
     </nav>
-    <section class="main-image">
+    <section class="main-image" id="main-image">
         <img src="principal.jpg" alt="Imagen principal">
     </section>
     <section id="pinturas" class="gallery">
@@ -147,9 +151,20 @@
     </footer>
     <!-- Script para manejar la visualización de las secciones -->
     <script>
-        function showSection(sectionId) {
+        function showMainImage() {
             // Ocultar todas las galerías y secciones de contacto
             var sections = document.querySelectorAll('.gallery, #contacto');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            // Mostrar la imagen principal
+            document.getElementById('main-image').classList.add('active');
+        }
+
+        function showSection(sectionId) {
+            // Ocultar todas las galerías y secciones de contacto
+            var sections = document.querySelectorAll('.gallery, #contacto, #main-image');
             sections.forEach(function(section) {
                 section.classList.remove('active');
             });
@@ -157,6 +172,11 @@
             // Mostrar la galería o sección seleccionada
             document.getElementById(sectionId).classList.add('active');
         }
+
+        // Mostrar la imagen principal al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            showMainImage();
+        });
     </script>
 </body>
 </html>
