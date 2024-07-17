@@ -17,7 +17,7 @@
             background-color: white; /* Fondo blanco */
             color: black; /* Texto en negro */
             text-align: center;
-            padding: 4em 0 2em; /* Reducido margen superior e inferior */
+            padding: 2em 0; /* Reducido margen superior e inferior */
         }
         header h1 {
             font-size: 4em;
@@ -64,7 +64,7 @@
             justify-content: center;
             padding: 2em;
             opacity: 0; /* Transición suave */
-            transition: opacity 0.5s;
+            transition: opacity 0.5s, display 0.5s; /* Transición suave */
         }
         .gallery.active {
             display: flex; /* Mostrar galería activa */
@@ -88,7 +88,7 @@
             padding: 2em;
             text-align: center;
             opacity: 0; /* Transición suave */
-            transition: opacity 0.5s;
+            transition: opacity 0.5s, display 0.5s; /* Transición suave */
         }
         #contacto.active {
             display: block; /* Mostrar cuando está activo */
@@ -163,7 +163,7 @@
         }
 
         function showSection(sectionId) {
-            // Ocultar todas las galerías y secciones de contacto
+            // Ocultar todas las galerías y secciones de contacto y la imagen principal
             var sections = document.querySelectorAll('.gallery, #contacto, #main-image');
             sections.forEach(function(section) {
                 section.classList.remove('active');
